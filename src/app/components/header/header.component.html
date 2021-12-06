@@ -1,0 +1,101 @@
+<!-- HEADER -->
+<header>
+  <!-- TOP HEADER -->
+  <div id="top-header">
+    <div class="container">
+      <ul class="header-links pull-left">
+        <li><a href="#"><i class="fa fa-phone"></i> +2011-500-890-28</a></li>
+        <li><a href="#"><i class="fa fa-envelope-o"></i> mazenmmbadr@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- /TOP HEADER -->
+
+  <!-- MAIN HEADER -->
+  <div id="header">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- LOGO -->
+        <div class="col-md-3">
+          <div class="header-logo">
+            <a routerLink="/" class="logo">
+              <img src="../../../assets/img/logo.png" alt="">
+            </a>
+          </div>
+        </div>
+        <!-- /LOGO -->
+
+        <!-- ACCOUNT -->
+        <div class="col-md-3 clearfix">
+          <div class="header-ctn">
+
+            <!-- Cart -->
+            <div class="dropdown" >
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor: pointer;">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Your Cart</span>
+                <div class="qty">{{cartData?.cartDetails?.length !== 0 ? cartData.cartDetails.length : 0}}</div>
+              </a>
+              <div class="cart-dropdown" >
+                <div class="cart-list" *ngIf="cartData?.cartDetails?.length !== 0">
+                  <div class="product-widget" *ngFor="let cartItem of cartData.cartDetails; let i=index">
+                    <div class="product-img">
+                      <img src="{{cartItem.product?.imageURL}}" alt="" width="20px">
+                    </div>
+                    <div class="product-body">
+                      <h3 class="product-name"><a href="#">{{cartItem.product?.name}}</a></h3>
+                      <h4 class="product-price"><span class="qty">{{cartItem.quantity}} x </span>{{cartItem.product?.price}}</h4>
+                    </div>
+                    <button class="delete" (click)="deleteProductFromCart(cartItem)"><i class="fa fa-close"></i></button>
+                  </div>
+
+
+                </div>
+                <div class="cart-summary">
+                  <small>{{cartData?.cartDetails?.length !== 0 ? cartData?.cartDetails?.length : 0}} Item(s) selected</small>
+                  <h5>TOTAL : {{cartTotal | currency:'USD'}}</h5>
+                </div>
+              </div>
+            </div> 
+            <!-- /Cart -->
+
+            <!-- Menu Toogle -->
+            <div class="menu-toggle">
+              <a href="#">
+                <i class="fa fa-bars"></i>
+                <span>Menu</span>
+              </a>
+            </div>
+            <!-- /Menu Toogle -->
+          </div>
+        </div>
+        <!-- /ACCOUNT -->
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </div>
+  <!-- /MAIN HEADER -->
+</header>
+<!-- /HEADER -->
+
+<!-- NAVIGATION -->
+<nav id="navigation">
+  <!-- container -->
+  <div class="container">
+    <!-- responsive-nav -->
+    <div id="responsive-nav">
+      <!-- NAV -->
+      <ul class="main-nav nav py-3">
+        <li class="active"><a href="#">Home</a></li>
+
+      </ul>
+      <!-- /NAV -->
+    </div>
+    <!-- /responsive-nav -->
+  </div>
+  <!-- /container -->
+</nav>
+<!-- /NAVIGATION -->

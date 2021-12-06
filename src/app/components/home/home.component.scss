@@ -1,0 +1,13 @@
+@import '~ngx-bar-rating/themes/br-default-theme';
+.disabled {
+  cursor: not-allowed;
+}
+
+::ng-deep {
+
+  mat-dialog-container {
+      background: white !important;
+      color: black !important;
+      max-height: 70vh;
+  }
+}
